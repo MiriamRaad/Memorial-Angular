@@ -1,0 +1,22 @@
+<div class="container">
+  <div class ='read-more  btn-group  '>
+     <button class="BB btn btn-light "  [class.active]= "filterby == 'all'" (click) = "filterby ='all'" > All Books </button>  
+    <button class="BB btn btn-light "  [class.active]= "filterby == 'YA'" (click) = "filterby ='YA'"> Young Adult  </button> 
+    <button class ="BB btn btn-light"  [class.active]= "filterby == 'SC'" (click) = "filterby ='SC'"> Scientific </button>  
+  </div>
+</div>
+
+<div class = "container  row" >
+  <div  class = " mx-auto d-block  " *ngFor = "let d  of (data| BookfilterPipe : filterby! )  ">
+  <a [routerLink] = "['/Book' , d.Name]">
+    <img  
+      class="  Imgage-List  " 
+      alt="Card image cap"
+      [src] = 'd.Image_Source'
+    />
+  </a> 
+</div>
+</div>
+
+
+
